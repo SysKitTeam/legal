@@ -34,6 +34,6 @@ sass:
    # - "https://github.com/your-username/your-repo-name"
 
 # Footer
-footer_content: "© {{ site.time | date: '%Y' }} Syskit Legal. All rights reserved."
+footer_content: "© {{ 'now' | date: '%Y' }} Syskit. All rights reserved."
 
 # Navigation order uses front matter `nav_order`
