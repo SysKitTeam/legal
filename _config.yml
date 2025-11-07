@@ -15,6 +15,7 @@ plugins:
 
 # just-the-docs settings (tweak as you like)
 logo: "assets/logo.svg"
+favicon_ico: "/assets/images/favicon-32x32.png"
 color_scheme: syskit
 heading_anchors: true
 search_enabled: true
