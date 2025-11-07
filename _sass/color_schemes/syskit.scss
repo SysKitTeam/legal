@@ -1,32 +1,66 @@
-// --- Syskit color scheme for just-the-docs ---
+// -------------------------------------------------------------
+// Syskit – Minimal Light Color Scheme for just-the-docs
+// -------------------------------------------------------------
 
 // Brand palette (from syskit.com)
-$syskit-purple:      #5700af; // links / primary accents  :contentReference[oaicite:0]{index=0}
-$syskit-deep-purple: #230056; // sidebar / headings       :contentReference[oaicite:1]{index=1}
-$syskit-purple-100:  #ddccef; // borders / subtle bg      :contentReference[oaicite:2]{index=2}
-$syskit-purple-200:  #f7f0fe; // code/table bg            :contentReference[oaicite:3]{index=3}
-$syskit-red:         #df3705; // active/hover highlight   :contentReference[oaicite:4]{index=4}
-$syskit-black:       #000024; // base text                 :contentReference[oaicite:5]{index=5}
-$syskit-grey-600:    #66667c; // secondary text           :contentReference[oaicite:6]{index=6}
+$syskit-purple:      #5700af;   // primary brand
+$syskit-deep-purple: #230056;   // headings / accent weight
+$syskit-purple-100:  #ddccef;   // tint for borders/panels
+$syskit-purple-200:  #f7f0fe;   // ultra-light surface
+$syskit-black:       #000024;   // main text
+$syskit-grey-600:    #66667c;   // secondary text
+$syskit-red:         #df3705;   // active/hover accent
 
-/* just-the-docs variables to override */
+// -------------------------------------------------------------
+// Base Layout
+// -------------------------------------------------------------
+
 $body-background-color:    #ffffff;
 $body-text-color:          $syskit-black;
-$link-color:               $syskit-purple;
-$btn-primary-color:        $syskit-purple;
-$btn-primary-text-color:   #ffffff;
+$body-heading-color:       $syskit-deep-purple;
 
-$sidebar-color:            $syskit-deep-purple;
-$nav-list-link-color:      #ffffff;
-$nav-list-active-color:    $syskit-red;
-$nav-list-border-color:    rgba(255,255,255,0.15);
+// -------------------------------------------------------------
+// Links & Buttons
+// -------------------------------------------------------------
 
-$search-background-color:  $syskit-deep-purple;
-$search-result-preview-color: $syskit-grey-600;
+$link-color:                   $syskit-purple;
+$link-color-hover:             $syskit-red;
 
-$code-background-color:    $syskit-purple-200;
-$table-background-color:   $syskit-purple-200;
-$border-color:             $syskit-purple-100;
+$btn-primary-color:            $syskit-purple;
+$btn-primary-text-color:       #ffffff;
+$btn-primary-color-hover:      $syskit-deep-purple;
+$btn-primary-text-color-hover: #ffffff;
 
-/* Optional: fine-tune small UI bits */
-$feedback-color:           $syskit-purple;
+// -------------------------------------------------------------
+// Sidebar (Clean / Minimal)
+// -------------------------------------------------------------
+
+// Very light background, nearly white
+$sidebar-color:                  #faf9ff; 
+$sidebar-border-color:           #ece7f7;
+
+// Navigation text hierarchy
+$nav-list-link-color:            $syskit-black;
+$nav-list-hover-color:           $syskit-black;
+$nav-list-active-color:          $syskit-purple;
+
+// Thin dividers
+$nav-list-border-color:          #ece7f7;
+
+// -------------------------------------------------------------
+// Search
+// -------------------------------------------------------------
+
+$search-background-color:         #faf9ff;
+$search-result-preview-color:     $syskit-grey-600;
+
+// -------------------------------------------------------------
+// Tables / Code / Blocks
+// -------------------------------------------------------------
+
+$code-background-color:           $syskit-purple-200;
+$table-background-color:          $syskit-purple-200;
+$border-color:                    $syskit-purple-100;
+
+// Feedback / Callouts / Notes
+$feedback-color:                  $syskit-purple;
