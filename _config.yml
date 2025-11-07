@@ -14,7 +14,7 @@ plugins:
   - jekyll-seo-tag
 
 # just-the-docs settings (tweak as you like)
-logo: # "assets/logo.svg"
+logo: "assets/logo.svg"
 color_scheme: light # or "dark"
 heading_anchors: true
 search_enabled: true
