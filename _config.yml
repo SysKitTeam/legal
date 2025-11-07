@@ -30,6 +30,6 @@ search:
    # - "https://github.com/your-username/your-repo-name"
 
 # Footer
-footer_content: "© {current_year} Syskit. All rights reserved."
+footer_content: "© © {{ \"now\" | date: \"%Y\" }}  Syskit. All rights reserved."
 
 # Navigation order uses front matter `nav_order`
