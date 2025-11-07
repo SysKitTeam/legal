@@ -15,7 +15,7 @@ plugins:
 
 # just-the-docs settings (tweak as you like)
 logo: "assets/logo.svg"
-color_scheme: light # or "dark"
+color_scheme: syskit
 heading_anchors: true
 search_enabled: true
 search:
