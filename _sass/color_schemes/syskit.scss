@@ -1,28 +1,32 @@
-// Fonts
-$body-font-family: "Open Sans", sans-serif;
+// --- Syskit color scheme for just-the-docs ---
 
-// Core brand
-$body-text-color: #000024;
-$link-color: #5700AF;
-$link-color-hover: #DF3705;
+// Brand palette (from syskit.com)
+$syskit-purple:      #5700af; // links / primary accents  :contentReference[oaicite:0]{index=0}
+$syskit-deep-purple: #230056; // sidebar / headings       :contentReference[oaicite:1]{index=1}
+$syskit-purple-100:  #ddccef; // borders / subtle bg      :contentReference[oaicite:2]{index=2}
+$syskit-purple-200:  #f7f0fe; // code/table bg            :contentReference[oaicite:3]{index=3}
+$syskit-red:         #df3705; // active/hover highlight   :contentReference[oaicite:4]{index=4}
+$syskit-black:       #000024; // base text                 :contentReference[oaicite:5]{index=5}
+$syskit-grey-600:    #66667c; // secondary text           :contentReference[oaicite:6]{index=6}
 
-// Navigation
-$nav-text-color: #230056;
-$nav-hover-text-color: #DF3705;
-$nav-background-color: white;
+/* just-the-docs variables to override */
+$body-background-color:    #ffffff;
+$body-text-color:          $syskit-black;
+$link-color:               $syskit-purple;
+$btn-primary-color:        $syskit-purple;
+$btn-primary-text-color:   #ffffff;
 
-// Sidebar highlights
-$nav-active-background-color: #F7F0FE;
-$nav-active-text-color: #5700AF;
+$sidebar-color:            $syskit-deep-purple;
+$nav-list-link-color:      #ffffff;
+$nav-list-active-color:    $syskit-red;
+$nav-list-border-color:    rgba(255,255,255,0.15);
 
-// Page structure
-$body-background-color: #FFFFFF;
-$sidebar-color: #DDCCEF;
+$search-background-color:  $syskit-deep-purple;
+$search-result-preview-color: $syskit-grey-600;
 
-// Buttons
-$btn-primary-color: #FFFFFF;
-$btn-primary-background-color: #5700AF;
-$btn-primary-border-color: #5700AF;
-$btn-primary-hover-color: #FFFFFF;
-$btn-primary-hover-background-color: #230056;
-$btn-primary-hover-border-color: #230056;
+$code-background-color:    $syskit-purple-200;
+$table-background-color:   $syskit-purple-200;
+$border-color:             $syskit-purple-100;
+
+/* Optional: fine-tune small UI bits */
+$feedback-color:           $syskit-purple;
