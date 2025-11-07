@@ -29,9 +29,9 @@ sass:
     - assets/css
 
 # Top-right “aux” links
-# aux_links:
-  #"Edit on GitHub":
-   # - "https://github.com/your-username/your-repo-name"
+aux_links:
+  "Try for free":
+    - "https://demo.syskit.com/auth"
 
 # Footer
 footer_content: "© {{ 'now' | date: '%Y' }} Syskit. All rights reserved."
