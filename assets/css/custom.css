@@ -16,21 +16,21 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
-  gap: 0.4rem 1.25rem;
-  margin: 0 auto 1.5rem;
+  align-items: center;
+  gap: 0.5rem 1.25rem;
+  margin: 0 0 1.5rem;
   text-align: left;
-  max-width: 60rem;
 }
 
 .syskit-footer-links a {
   position: relative;
-  padding: 0;
-  white-space: normal;
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
 }
 
 .syskit-footer-links a:not(:last-child)::after {
-  content: "|";
+  content: "•";
   margin-left: 1rem;
-  margin-right: -0.5rem;
   color: rgba(255, 255, 255, 0.6);
 }
