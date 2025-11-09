@@ -33,9 +33,3 @@ sass:
 aux_links:
   "Try for free":
     - "https://demo.syskit.com/auth"
-
-# Footer
-footer_content: "© {{ site.time | date: '%Y' }} Syskit. All rights reserved."
-
-
-# Navigation order uses front matter `nav_order`
