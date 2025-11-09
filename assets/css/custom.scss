@@ -1,64 +1,112 @@
 ---
 ---
 
-/* -----------------------------------------------------------
-   Font: Syskit uses Open Sans publicly (Gelion is licensed).
-   This import ensures consistent typography across the docs.
------------------------------------------------------------ */
+/* Load Open Sans */
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap");
 
-/* Apply font to Just-the-Docs */
+/* Apply font globally */
 :root {
   --jtd-font-family: "Open Sans", system-ui, -apple-system, "Segoe UI",
                      Roboto, Helvetica, Arial, sans-serif;
 }
 
-/* -----------------------------------------------------------
-   Minimal Navigation Style (Style A)
-   No gradients, no colored blocks — just a clean focus line.
------------------------------------------------------------ */
+/* ------------------------------------------------------------
+   REMOVE ALL NAV HIGHLIGHT BACKGROUNDS / GRADIENTS
+------------------------------------------------------------ */
 
-/* Reset ALL backgrounds so gradients cannot leak from any CSS */
-.nav-list * {
+.nav-list .nav-list-item > .nav-list-link,
+.nav-list .nav-list-item.active > .nav-list-link {
   background: none !important;
   background-image: none !important;
+  box-shadow: none !important;
 }
 
-/* Default nav links — neutral, no background blocks */
-.nav-list .nav-list-item > .nav-list-link {
+/* Remove the pseudo-element gradient Just-the-Docs uses */
+.nav-list .nav-list-item > .nav-list-link::before {
   background: none !important;
+  background-image: none !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+/* ------------------------------------------------------------
+   Minimal highlight style (thin left border only)
+------------------------------------------------------------ */
+
+.nav-list .nav-list-item > .nav-list-link {
   border-left: 0 !important;
   padding-left: 1rem !important;
-  color: #000024; /* Syskit body text */
+  color: #000024;
 }
 
-/* Active link — thin purple accent line, intentional and clean */
 .nav-list .nav-list-item.active > .nav-list-link {
-  border-left: 3px solid #5700af !important; /* Syskit purple */
+  border-left: 3px solid #5700af !important;
   padding-left: calc(1rem - 3px) !important;
   color: #5700af !important;
 }
 
-/* Hover — subtle, no background fills */
 .nav-list .nav-list-item > .nav-list-link:hover {
   background: none !important;
   color: #5700af !important;
 }
 
-/* -----------------------------------------------------------
-   Optional sidebar background softness (keeps it minimal)
-   If too light → you may switch to pure white (#ffffff)
------------------------------------------------------------ */
-.site-nav, .side-bar {
-  background-color: #faf9ff !important; /* whisper lavender */
+/* ------------------------------------------------------------
+   Sidebar background (light & minimal)
+------------------------------------------------------------ */
+.side-bar,
+.site-nav {
+  background-color: #faf9ff !important; /* whisper soft */
   border-right: 1px solid #ece7f7 !important;
 }
 
-/* -----------------------------------------------------------
-   Optional: Improve code / inline contrast
------------------------------------------------------------ */
-code, pre code {
-  color: #230056; /* deep purple for readable accents */
+/* ------------------------------------------------------------
+   Code and pre styling for subtle brand tone
+------------------------------------------------------------ */
+pre, code {
+  color: #230056;
 }
 
-/* End of custom.scss */
+/* ------------------------------------------------------------
+   Syskit Footer Styling (Light, Clean, Docs-Appropriate)
+------------------------------------------------------------ */
+.syskit-footer {
+  background: #230056;
+  padding: 3rem 1.5rem;
+  color: #ffffff;
+  text-align: center;
+}
+
+.syskit-footer-logo {
+  height: 50px;
+  margin-bottom: 2rem;
+}
+
+.syskit-footer-cert-row img {
+  max-height: 50px;
+  margin: 0.75rem;
+  opacity: 0.9;
+}
+
+.syskit-footer-links {
+  margin-top: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.syskit-footer-links a {
+  color: #ffffff;
+  margin: 0 0.75rem;
+  font-size: 0.875rem;
+  text-decoration: none;
+  opacity: 0.8;
+}
+
+.syskit-footer-links a:hover {
+  opacity: 1;
+  color: #ffa100; /* brand amber highlight */
+}
+
+.syskit-footer-bottom {
+  margin-top: 2rem;
+  font-size: 0.8rem;
+  opacity: 0.7;
+}
