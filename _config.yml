@@ -5,7 +5,7 @@ description: A repo for Syskit legal docs
 # baseurl: "/your-repo-name"
 
 # Use just-the-docs via remote_theme (works on GitHub Pages)
-remote_theme: just-the-docs/just-the-docs
+theme: just-the-docs/just-the-docs
 
 # GitHub Pages–safe plugins
 plugins:

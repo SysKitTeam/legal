@@ -1,112 +1,143 @@
 ---
 ---
 
-/* Load Open Sans */
+/* 1) Font */
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap");
 
-/* Apply font globally */
 :root {
   --jtd-font-family: "Open Sans", system-ui, -apple-system, "Segoe UI",
                      Roboto, Helvetica, Arial, sans-serif;
+
+  /* 2) Syskit colors */
+  --syskit-purple: #5700af;     /* primary */   /* ref: site styles */
+  --syskit-purple-dark: #230056;                 /* ref: site styles */
+  --syskit-purple-100: #ddccef;                  /* ref: site styles */
+  --syskit-purple-50:  #f7f0fe;                  /* ref: site styles */
+  --syskit-red:    #df3705;                      /* ref: site styles */
+  --syskit-orange: #db7d24;                      /* ref: site styles */
+  --syskit-green:  #3e8d53;                      /* ref: site styles */
+  --syskit-ink:    #000024;                      /* deep text */
+  --syskit-gray:   #66667c;                      /* muted text */
+
+  /* 2a) Just-the-Docs CSS variables where available */
+  --jtd-nav-background-color: var(--syskit-purple-50);      /* softer sidebar bg */
+  --jtd-nav-link-color: var(--syskit-ink);
+  --jtd-link-color: var(--syskit-purple);
+  --jtd-primary-color: var(--syskit-purple);
+  --jtd-code-background-color: #f6f8fa;
+  --jtd-code-text-color: #1f2328;
 }
 
-/* ------------------------------------------------------------
-   REMOVE ALL NAV HIGHLIGHT BACKGROUNDS / GRADIENTS
------------------------------------------------------------- */
-
-.nav-list .nav-list-item > .nav-list-link,
-.nav-list .nav-list-item.active > .nav-list-link {
-  background: none !important;
-  background-image: none !important;
-  box-shadow: none !important;
+/* 3) Global typography */
+body, .site-nav, .nav-list, .main-content, .footer, .search-input {
+  font-family: var(--jtd-font-family);
+  color: var(--syskit-ink);
 }
 
-/* Remove the pseudo-element gradient Just-the-Docs uses */
-.nav-list .nav-list-item > .nav-list-link::before {
-  background: none !important;
-  background-image: none !important;
-  box-shadow: none !important;
-  border: none !important;
+/* 4) Links */
+a { color: var(--syskit-purple); }
+a:hover, a:focus { color: var(--syskit-red); }
+
+/* 5) Left nav background + borders */
+.site-nav, .side-bar, .navlist {
+  background: var(--jtd-nav-background-color);
+  border-right: 1px solid var(--syskit-purple-100);
 }
 
-/* ------------------------------------------------------------
-   Minimal highlight style (thin left border only)
------------------------------------------------------------- */
-
-.nav-list .nav-list-item > .nav-list-link {
-  border-left: 0 !important;
-  padding-left: 1rem !important;
-  color: #000024;
+/* 6) Remove the default gradient highlight completely */
+.nav-list .nav-list-item .nav-list-link:hover,
+.nav-list .nav-list-item .nav-list-link.active {
+  background-image: none !important;           /* kill gradient */
+  background-color: transparent !important;
+  color: var(--syskit-purple) !important;
 }
 
-.nav-list .nav-list-item.active > .nav-list-link {
-  border-left: 3px solid #5700af !important;
-  padding-left: calc(1rem - 3px) !important;
-  color: #5700af !important;
+/* 7) Use a thin active indicator instead of a pill */
+.nav-list .nav-list-item.active > a {
+  border-left: 3px solid var(--syskit-purple);
+  padding-left: calc(1rem - 3px);
+  background: transparent !important;
 }
 
-.nav-list .nav-list-item > .nav-list-link:hover {
-  background: none !important;
-  color: #5700af !important;
+/* Hover state should be subtle */
+.nav-list .nav-list-item > a:hover {
+  background: transparent;
+  color: var(--syskit-purple);
 }
 
-/* ------------------------------------------------------------
-   Sidebar background (light & minimal)
------------------------------------------------------------- */
-.side-bar,
-.site-nav {
-  background-color: #faf9ff !important; /* whisper soft */
-  border-right: 1px solid #ece7f7 !important;
+/* 8) Top header tweaks (if you enabled a logo) */
+.site-header, .site-header .site-title {
+  color: var(--syskit-ink);
+}
+.site-header {
+  border-bottom: 1px solid var(--syskit-purple-100);
 }
 
-/* ------------------------------------------------------------
-   Code and pre styling for subtle brand tone
------------------------------------------------------------- */
-pre, code {
-  color: #230056;
+/* 9) Buttons (if any) */
+.btn, .button {
+  background: var(--syskit-purple);
+  border-color: var(--syskit-purple);
+  color: #fff;
+}
+.btn:hover, .button:hover {
+  background: var(--syskit-purple-dark);
+  border-color: var(--syskit-purple-dark);
+  color: #fff;
 }
 
-/* ------------------------------------------------------------
-   Syskit Footer Styling (Light, Clean, Docs-Appropriate)
------------------------------------------------------------- */
-.syskit-footer {
-  background: #230056;
-  padding: 3rem 1.5rem;
-  color: #ffffff;
-  text-align: center;
+/* 10) Code blocks */
+.highlight, pre, code {
+  background: var(--jtd-code-background-color);
+  color: var(--jtd-code-text-color);
 }
 
-.syskit-footer-logo {
-  height: 50px;
-  margin-bottom: 2rem;
+/* 11) Tables & blockquotes accents */
+table thead th {
+  background: var(--syskit-purple);
+  color: #fff;
+}
+blockquote {
+  border-left: 4px solid var(--syskit-purple);
 }
 
-.syskit-footer-cert-row img {
-  max-height: 50px;
-  margin: 0.75rem;
-  opacity: 0.9;
+/* 12) Footer (when using _includes/footer_custom.html) */
+footer.footer {
+  background: var(--syskit-purple-dark);
+  color: #fff;
+}
+footer.footer a { color: #fff; opacity: 0.9; }
+footer.footer a:hover { color: #fff; opacity: 1; }
+.footer__socials .icon { fill: #fff; }
+.footer__socials .icon:hover { fill: var(--syskit-orange); }
+
+/* 13) Search highlight color */
+.search-result .search-result-doc .search-result-icon {
+  color: var(--syskit-purple);
+}
+mark, .search-result em {
+  background: var(--syskit-purple-100);
+  color: inherit;
 }
 
+/* 14) Small utilities */
+.text-muted { color: var(--syskit-gray) !important; }
+
+/* Footer link separator styling */
 .syskit-footer-links {
-  margin-top: 2.5rem;
-  margin-bottom: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem 1rem; /* space between items */
 }
 
 .syskit-footer-links a {
-  color: #ffffff;
-  margin: 0 0.75rem;
-  font-size: 0.875rem;
-  text-decoration: none;
-  opacity: 0.8;
+  position: relative;
+  padding: 0 0.4rem;
 }
 
-.syskit-footer-links a:hover {
-  opacity: 1;
-  color: #ffa100; /* brand amber highlight */
-}
-
-.syskit-footer-bottom {
-  margin-top: 2rem;
-  font-size: 0.8rem;
-  opacity: 0.7;
+/* Add the dot between items */
+.syskit-footer-links a:not(:last-child)::after {
+  content: "•";
+  margin-left: 0.6rem;
+  color: rgba(255,255,255,0.6);
 }
